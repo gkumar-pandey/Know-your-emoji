@@ -1,15 +1,16 @@
 import "./App.css";
 import emojiDetails from "./Components/Data/Data";
 import { useState } from "react";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [emojiMeaning, setEmojiMeaning] = useState("");
   const emoji = Object.keys(emojiDetails);
   const renderEmojiMeaning = (text) => {
     if (text == undefined) {
-      setEmojiMeaning("This emoji is not available in our Database");
+      setEmojiMeaning("This emoji is not available in our Database.🤒");
     } else if (text == "") {
-      setEmojiMeaning("Your emoji meaning will appear here");
+      setEmojiMeaning("🤓Your emoji meaning will appear here🤓 ");
     } else {
       setEmojiMeaning(text);
     }
@@ -35,6 +36,8 @@ function App() {
           onChange={inputHandle}
         />
         <div id="output-text">{emojiMeaning}</div>
+        <h3>Availabe Emojis 👇</h3>
+
         <div id="emoji-we-have">
           {emoji.map((item) => {
             return (
@@ -49,6 +52,7 @@ function App() {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
