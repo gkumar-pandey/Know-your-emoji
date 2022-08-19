@@ -20,7 +20,6 @@ function App() {
     renderEmojiMeaning(text);
   };
   const inputHandle = (e) => {
-    console.log(e.target.value);
     let text = emojiDetails[e.target.value];
     renderEmojiMeaning(text);
   };
@@ -61,6 +60,7 @@ const style = {
   emoji: {
     fontSize: "2rem",
     padding: "1rem",
+    cursor: 'pointer'
   },
 };
 
